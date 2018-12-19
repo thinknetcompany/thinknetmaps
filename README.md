@@ -1,4 +1,4 @@
-![THiNKNET Maps Logo](/static/image/logo_thinknet_maps.png)
+![THiNKNET Maps Logo](https://s3-ap-southeast-1.amazonaws.com/thinknet-maps-resource/common-mapmagic-image/logo_thinknet_maps.png)
 
 # THINKNET Maps
 
