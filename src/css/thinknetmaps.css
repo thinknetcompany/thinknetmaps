@@ -1,0 +1,19 @@
+@import "mapbox-gl.css";
+
+a.thinknetmaps-ctrl-logo {
+  width: 198px;
+  height: 27px;
+  margin: 0 0 -3px -3px;
+  display: block;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-image: svg-load('svg/THiNKNET_Maps_color.svg');
+}
+
+a.thinknetmaps-ctrl-logo.dark {
+  background-image: svg-load('svg/THiNKNET_Maps_black.svg');
+}
+
+.mapboxgl-missing-css {
+  display: none;
+}
