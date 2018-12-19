@@ -1,4 +1,4 @@
-![THiNKNET Maps Logo](https://s3-ap-southeast-1.amazonaws.com/thinknet-maps-resource/common-mapmagic-image/logo_thinknet_maps.png)
+![THiNKNET Maps Logo](/static/image/logo_thinknet_maps.png)
 
 # thinknetmaps
 
@@ -62,8 +62,8 @@ require('node_modules/thinknetmaps/dist/thinknetmaps.css')
 #### Or download from thinknet server for using on HTML
 
 ```html
-<script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.0.0.min.js'></script>
-<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.0.0.min.css' rel='stylesheet' />
+<script src='https://api-maps.thinknet.co.th/thinknetmaps/1.0.0/js/thinknetmaps.js'></script>
+<link href='https://api-maps.thinknet.co.th/thinknetmaps/1.0.0/css/thinknetmaps.css' rel='stylesheet' />
 ```
 
 
@@ -75,8 +75,8 @@ Create `<div id="YOUR_MAP">` for render map on website, but you should have both
 ```html
 <html>
   <head>
-    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.0.0.min.js'></script>
-    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.0.0.min.css' rel='stylesheet' />
+    <script src='https://api-maps.thinknet.co.th/thinknetmaps/1.0.0/js/thinknetmaps.js'></script>
+    <link href='https://api-maps.thinknet.co.th/thinknetmaps/1.0.0/css/thinknetmaps.css' rel='stylesheet' />
   </head>
   <body>
     <div id="map" style="height: 100vh;" />
@@ -410,8 +410,8 @@ map.on('load', function() {
   <head>
     <title>DEMO</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.0.0.min.js'></script>
-    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.0.0.min.css' rel='stylesheet' />
+    <script src='https://api-maps.thinknet.co.th/thinknetmaps/1.0.0/js/thinknetmaps.js'></script>
+    <link href='https://api-maps.thinknet.co.th/thinknetmaps/1.0.0/css/thinknetmaps.css' rel='stylesheet' />
   </head>
   <body>
     <div id="map" style="height: 100vh;"></div>
