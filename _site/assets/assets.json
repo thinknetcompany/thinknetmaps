@@ -1,0 +1,338 @@
+{
+  "manifest": {
+    "js": "/mapbox-gl-js/assets/manifest-cc4672c34f632df0a409.js"
+  },
+  "mapbox-gl-js-example-line-gradient": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-line-gradient-27cfd81d8c9350b84173.chunk.js"
+  },
+  "mapbox-gl-js": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-7af23438c43e16c8927d.chunk.js"
+  },
+  "mapbox-gl-js-api": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-api-9616043f00954df86937.chunk.js"
+  },
+  "mapbox-gl-js-example-3d-buildings": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-3d-buildings-ad62dc74ef3d0d67b1f1.chunk.js"
+  },
+  "mapbox-gl-js-example-3d-extrusion-floorplan": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-3d-extrusion-floorplan-cd1e701a64f8a1edadd5.chunk.js"
+  },
+  "mapbox-gl-js-example-add-image": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-add-image-bf17728b3e1415fc8a8c.chunk.js"
+  },
+  "mapbox-gl-js-example-add-image-generated": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-add-image-generated-244a933a9ba16b7c0b78.chunk.js"
+  },
+  "mapbox-gl-js-example-adjust-layer-opacity": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-adjust-layer-opacity-c033600f65b54a853255.chunk.js"
+  },
+  "mapbox-gl-js-example-animate-a-line": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-animate-a-line-4331342c74bf3a1a75fa.chunk.js"
+  },
+  "mapbox-gl-js-example-animate-camera-around-point": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-animate-camera-around-point-704a599cccf4f65ecc7a.chunk.js"
+  },
+  "mapbox-gl-js-example-animate-images": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-animate-images-ccca30f165cf022aa3b3.chunk.js"
+  },
+  "mapbox-gl-js-example-animate-marker": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-animate-marker-754fdaa5be9566e6e618.chunk.js"
+  },
+  "mapbox-gl-js-example-animate-point-along-line": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-animate-point-along-line-17bb6f128121285712d8.chunk.js"
+  },
+  "mapbox-gl-js-example-animate-point-along-route": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-animate-point-along-route-2d897eb9fca29e135401.chunk.js"
+  },
+  "mapbox-gl-js-example-attribution-position": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-attribution-position-109694e73e1bf0ad407d.chunk.js"
+  },
+  "mapbox-gl-js-example-center-on-symbol": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-center-on-symbol-341a18ca15ae5c034ade.chunk.js"
+  },
+  "mapbox-gl-js-example-change-building-color-based-on-zoom-level": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-change-building-color-based-on-zoom-level-1c82c5f462a325ad86ab.chunk.js"
+  },
+  "mapbox-gl-js-example-change-case-of-labels": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-change-case-of-labels-0446ff9485b1be789789.chunk.js"
+  },
+  "mapbox-gl-js-example-check-for-support": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-check-for-support-ee3b8d8ab685bef4730c.chunk.js"
+  },
+  "mapbox-gl-js-example-cluster": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-cluster-f5ef02d0868b9d08d29a.chunk.js"
+  },
+  "mapbox-gl-js-example-color-switcher": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-color-switcher-14aa4fd6f7ba15b249de.chunk.js"
+  },
+  "mapbox-gl-js-example-custom-marker-icons": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-custom-marker-icons-7e359e67f9aef7544a8f.chunk.js"
+  },
+  "mapbox-gl-js-example-custom-style-id": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-custom-style-id-386c5b59601fb9153b77.chunk.js"
+  },
+  "mapbox-gl-js-example-custom-style-layer": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-custom-style-layer-c518c294b4c5d5e633d4.chunk.js"
+  },
+  "mapbox-gl-js-example-dancing-buildings": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-dancing-buildings-e5afe2c0540ddc45c87f.chunk.js"
+  },
+  "mapbox-gl-js-example-data-driven-circle-colors": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-data-driven-circle-colors-28728607c1d6ae1ac517.chunk.js"
+  },
+  "mapbox-gl-js-example-data-driven-lines": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-data-driven-lines-84b59c12a47f1fb42e63.chunk.js"
+  },
+  "mapbox-gl-js-example-data-join": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-data-join-ebc4565ca025833eac31.chunk.js"
+  },
+  "mapbox-gl-js-example-disable-rotation": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-disable-rotation-e014e88b28576c527e8e.chunk.js"
+  },
+  "mapbox-gl-js-example-disable-scroll-zoom": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-disable-scroll-zoom-f1e6559e26e7124f54d2.chunk.js"
+  },
+  "mapbox-gl-js-example-display-and-style-rich-text-labels": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-display-and-style-rich-text-labels-8f37a5293483ec9b33c1.chunk.js"
+  },
+  "mapbox-gl-js-example-drag-a-marker": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-drag-a-marker-6e6e483b49fb8cea6478.chunk.js"
+  },
+  "mapbox-gl-js-example-drag-a-point": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-drag-a-point-7848655c34b299b45cbf.chunk.js"
+  },
+  "mapbox-gl-js-example-featuresat": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-featuresat-335c083dc3e6a58766c3.chunk.js"
+  },
+  "mapbox-gl-js-example-filter-features-within-map-view": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-filter-features-within-map-view-46615efbf873d0e04e15.chunk.js"
+  },
+  "mapbox-gl-js-example-filter-markers": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-filter-markers-539d8d90eba75b3725d5.chunk.js"
+  },
+  "mapbox-gl-js-example-filter-markers-by-input": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-filter-markers-by-input-1e7dfb7eb791e6431f82.chunk.js"
+  },
+  "mapbox-gl-js-example-fitbounds": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-fitbounds-0947e947d9e0cef8d82d.chunk.js"
+  },
+  "mapbox-gl-js-example-flyto": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-flyto-05510c98342675d9d382.chunk.js"
+  },
+  "mapbox-gl-js-example-flyto-options": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-flyto-options-76625a27b04d63edee56.chunk.js"
+  },
+  "mapbox-gl-js-example-forward-geocode-custom-data": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-forward-geocode-custom-data-31c44071ec60d22eefe0.chunk.js"
+  },
+  "mapbox-gl-js-example-fullscreen": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-fullscreen-66acf4da371aface76e0.chunk.js"
+  },
+  "mapbox-gl-js-example-game-controls": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-game-controls-1925ae8f7e9629510849.chunk.js"
+  },
+  "mapbox-gl-js-example-geojson-layer-in-stack": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-geojson-layer-in-stack-045d81e6da81a0e4e9a2.chunk.js"
+  },
+  "mapbox-gl-js-example-geojson-line": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-geojson-line-3ff6e51fc91b033dc3e7.chunk.js"
+  },
+  "mapbox-gl-js-example-geojson-markers": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-geojson-markers-7fe946342aba7f0cd327.chunk.js"
+  },
+  "mapbox-gl-js-example-geojson-polygon": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-geojson-polygon-4d5a1761e8abcaedebc0.chunk.js"
+  },
+  "mapbox-gl-js-example-heatmap": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-heatmap-f8a056f47dcfe74b9f2c.chunk.js"
+  },
+  "mapbox-gl-js-example-heatmap-layer": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-heatmap-layer-fe68006e8fded76903af.chunk.js"
+  },
+  "mapbox-gl-js-example-hillshade": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-hillshade-e51e514a06a1228e44a6.chunk.js"
+  },
+  "mapbox-gl-js-example-hover-styles": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-hover-styles-7b63e0959236e3bee500.chunk.js"
+  },
+  "mapbox-gl-js-example-image-on-a-map": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-image-on-a-map-6a4d4cc01c006e7c9b2c.chunk.js"
+  },
+  "mapbox-gl-js-example-interactive-false": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-interactive-false-85af0eaca42e180d7a5a.chunk.js"
+  },
+  "mapbox-gl-js-example-jump-to": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-jump-to-ae45ba2a8569492dde3a.chunk.js"
+  },
+  "mapbox-gl-js-example-language-switch": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-language-switch-9b5d1bc985a546f22f72.chunk.js"
+  },
+  "app": {
+    "js": "/mapbox-gl-js/assets/app-8ddbf32dbaa3149c6b19.js"
+  },
+  "mapbox-gl-js-example-live-geojson": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-live-geojson-4ef1b4822fd9dc18b13b.chunk.js"
+  },
+  "mapbox-gl-js-example-live-update-feature": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-live-update-feature-c279ac56922e47a56b10.chunk.js"
+  },
+  "mapbox-gl-js-example-local-ideographs": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-local-ideographs-d395e0fbb0411ffaf4e5.chunk.js"
+  },
+  "mapbox-gl-js-example-locate-user": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-locate-user-976438fb6478a6687cec.chunk.js"
+  },
+  "mapbox-gl-js-example-map-tiles": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-map-tiles-f5910bed09d27841c605.chunk.js"
+  },
+  "mapbox-gl-js-example-mapbox-gl-compare": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-mapbox-gl-compare-edc917fa85c043b1213c.chunk.js"
+  },
+  "mapbox-gl-js-example-mapbox-gl-directions": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-mapbox-gl-directions-3106d8983e523517ae42.chunk.js"
+  },
+  "mapbox-gl-js-example-mapbox-gl-draw": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-mapbox-gl-draw-d0fd18f985509f0d859b.chunk.js"
+  },
+  "mapbox-gl-js-example-mapbox-gl-geocoder": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-mapbox-gl-geocoder-2caee4874eb5f356570a.chunk.js"
+  },
+  "mapbox-gl-js-example-mapbox-gl-geocoder-limit-region": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-mapbox-gl-geocoder-limit-region-c203bd7f7b176adcb673.chunk.js"
+  },
+  "mapbox-gl-js-example-mapbox-gl-geocoder-local-geocoder": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-mapbox-gl-geocoder-local-geocoder-6613f923aad148f0d7a5.chunk.js"
+  },
+  "mapbox-gl-js-example-mapbox-gl-geocoder-outside-the-map": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-mapbox-gl-geocoder-outside-the-map-f895b4ad38ea8a81f27a.chunk.js"
+  },
+  "mapbox-gl-js-example-mapbox-gl-geocoder-proximity-bias": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-mapbox-gl-geocoder-proximity-bias-5ed88c6e10a11b305be3.chunk.js"
+  },
+  "mapbox-gl-js-example-mapbox-gl-rtl-text": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-mapbox-gl-rtl-text-10548198842846632e85.chunk.js"
+  },
+  "mapbox-gl-js-example-mapbox-gl-supported": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-mapbox-gl-supported-7b9b6d5b2aab9d3ee256.chunk.js"
+  },
+  "mapbox-gl-js-example-marker-from-geocode": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-marker-from-geocode-26ba5dbd248288dfed16.chunk.js"
+  },
+  "mapbox-gl-js-example-marker-popup": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-marker-popup-d48d10467d678dac659e.chunk.js"
+  },
+  "mapbox-gl-js-example-measure": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-measure-946965eda985abaa78c8.chunk.js"
+  },
+  "mapbox-gl-js-example-mouse-position": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-mouse-position-2bf7c936c6d7f73bdaa9.chunk.js"
+  },
+  "mapbox-gl-js-example-multiple-geometries": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-multiple-geometries-c6696af794914b6110bb.chunk.js"
+  },
+  "mapbox-gl-js-example-navigation": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-navigation-daa3604c5fa782e67918.chunk.js"
+  },
+  "mapbox-gl-js-example-playback-locations": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-playback-locations-3472f76c21ec54547a1d.chunk.js"
+  },
+  "mapbox-gl-js-example-point-from-geocoder-result": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-point-from-geocoder-result-2e8c624788678765200d.chunk.js"
+  },
+  "mapbox-gl-js-example-polygon-popup-on-click": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-polygon-popup-on-click-37fc8d24b397702c0396.chunk.js"
+  },
+  "mapbox-gl-js-example-popup": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-popup-9421652e2b3666d89609.chunk.js"
+  },
+  "mapbox-gl-js-example-popup-on-click": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-popup-on-click-3e0194238447f38e9fcf.chunk.js"
+  },
+  "mapbox-gl-js-example-popup-on-hover": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-popup-on-hover-da63114ff5a42aa3c65e.chunk.js"
+  },
+  "mapbox-gl-js-example-query-similar-features": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-query-similar-features-6ccbfcbb642ed647f521.chunk.js"
+  },
+  "mapbox-gl-js-example-queryrenderedfeatures": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-queryrenderedfeatures-8b6c099cc90819a88e3b.chunk.js"
+  },
+  "mapbox-gl-js-example-queryrenderedfeatures-around-point": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-queryrenderedfeatures-around-point-bd877fb7503eab14f317.chunk.js"
+  },
+  "mapbox-gl-js-example-restrict-bounds": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-restrict-bounds-3500d758241b707041b0.chunk.js"
+  },
+  "mapbox-gl-js-example-satellite-map": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-satellite-map-62c334a5352a47db0428.chunk.js"
+  },
+  "mapbox-gl-js-example-scroll-fly-to": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-scroll-fly-to-c9f4a78bb6f9ab79a60c.chunk.js"
+  },
+  "mapbox-gl-js-example-set-perspective": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-set-perspective-8a78352f2664e8ff968c.chunk.js"
+  },
+  "mapbox-gl-js-example-set-popup": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-set-popup-a786cc8a4ae7595ee7c9.chunk.js"
+  },
+  "mapbox-gl-js-example-setstyle": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-setstyle-a98bf26f29247579fae5.chunk.js"
+  },
+  "mapbox-gl-js-example-simple-map": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-simple-map-cbaa628bfcd7a8c58f4b.chunk.js"
+  },
+  "mapbox-gl-js-example-style-ocean-depth-data": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-style-ocean-depth-data-9e38e41d5aaa49bf9961.chunk.js"
+  },
+  "mapbox-gl-js-example-third-party": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-third-party-283bc13d0b90008477dd.chunk.js"
+  },
+  "mapbox-gl-js-example-timeline-animation": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-timeline-animation-a5821f6765a4e9b3da56.chunk.js"
+  },
+  "mapbox-gl-js-example-toggle-interaction-handlers": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-toggle-interaction-handlers-5b33ff51bb4c0df11500.chunk.js"
+  },
+  "mapbox-gl-js-example-toggle-layers": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-toggle-layers-3875027be2123e8daa54.chunk.js"
+  },
+  "mapbox-gl-js-example-updating-choropleth": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-updating-choropleth-b817f9b93dd22f8701e9.chunk.js"
+  },
+  "mapbox-gl-js-example-using-box-queryrenderedfeatures": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-using-box-queryrenderedfeatures-4b32237e0bcff4aa4f74.chunk.js"
+  },
+  "mapbox-gl-js-example-using-featuresin": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-using-featuresin-a233be3d6646aa9733e7.chunk.js"
+  },
+  "mapbox-gl-js-example-vector-source": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-vector-source-5b02ff5448894a11158f.chunk.js"
+  },
+  "mapbox-gl-js-example-video-on-a-map": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-video-on-a-map-1c3b888319f4dd1f9c4a.chunk.js"
+  },
+  "mapbox-gl-js-example-visualize-population-density": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-visualize-population-density-15584980c411bbd938f1.chunk.js"
+  },
+  "mapbox-gl-js-example-wms": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-wms-30c472935b22e15ae4ea.chunk.js"
+  },
+  "mapbox-gl-js-example-zoomto-linestring": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-example-zoomto-linestring-03e56a0f947343fa5284.chunk.js"
+  },
+  "mapbox-gl-js-examples": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-examples-4d554e3cbef583a55b5a.chunk.js"
+  },
+  "mapbox-gl-js-plugins": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-plugins-359cccd439b7d14135a8.chunk.js"
+  },
+  "mapbox-gl-js-roadmap": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-roadmap-e9c1f3df0c7d02059889.chunk.js"
+  },
+  "mapbox-gl-js-style-spec": {
+    "js": "/mapbox-gl-js/assets/mapbox-gl-js-style-spec-fed90ac91014896dcd03.chunk.js"
+  },
+  "vendor": {
+    "js": "/mapbox-gl-js/assets/vendor-8c243a19d1ba9556f9ac.js"
+  }
+}

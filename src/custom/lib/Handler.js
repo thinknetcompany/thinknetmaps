@@ -1,8 +1,9 @@
+/* eslint-disable no-undef */
 // @flow
 import Logger from '../util/Logger';
 
-let isOverlayClosed = 0;
-let map = null;
+const isOverlayClosed = {};
+const isKeyUp = {};
 const macText = 'กด ⌘ + Scroll เพื่อซูมแผนที่';
 const winText = 'กด Ctrl + Scroll เพื่อซูมแผนที่';
 const mobileText = 'ใช้ 2 นิ้วเพื่อเลื่อนแผนที่';
@@ -10,10 +11,14 @@ const mobileText = 'ใช้ 2 นิ้วเพื่อเลื่อนแ
 const isWin = navigator.appVersion.includes("Win");
 const isMac = navigator.appVersion.includes("Mac");
 
-const overWrite = () => {
+const overWrite = (map) => {
     map.dragPan._ignoreEvent = function _ignoreEvent(e) {
-        if (map.boxZoom && map.boxZoom.isActive()) { return true; }
-        if (map.dragRotate && map.dragRotate.isActive()) { return true; }
+        if (map.boxZoom && map.boxZoom.isActive()) {
+            return true;
+        }
+        if (map.dragRotate && map.dragRotate.isActive()) {
+            return true;
+        }
         if (e.touches) {
             return (e.touches.length !== 2);
         } else {
@@ -23,12 +28,12 @@ const overWrite = () => {
     };
 };
 
-const initStyle = () => {
+const initStyle = (container, map) => {
     const id = map._canvasContainer.offsetParent.id;
-    document.getElementsByClassName("mapboxgl-canvas")[0].style.zIndex = 1;
+    document.getElementById(`${container}-canvas`).style.zIndex = 1;
 
     const element = document.createElement("div");
-    element.setAttribute('id', 'thinknetmaps-overlay');
+    element.setAttribute('id', `${container}-overlay`);
     element.style.height = '100%';
     element.style.width = '100%';
     element.style.backgroundColor = 'black';
@@ -42,9 +47,9 @@ const initStyle = () => {
     document.getElementById(id).appendChild(element);
 };
 
-const openOverlay = (text = null) => {
-    const thinketMapsOverlay = document.getElementById('thinknetmaps-overlay');
-    const thinketMaps = document.getElementsByClassName('mapboxgl-canvas')[0];
+const openOverlay = (text = null, container) => {
+    const thinketMapsOverlay = document.getElementById(`${container}-overlay`);
+    const thinketMaps = document.getElementById(`${container}-canvas`);
     thinketMapsOverlay.innerHTML = text;
     thinketMapsOverlay.style.zIndex = 1;
     thinketMapsOverlay.style.opacity = 0.5;
@@ -52,9 +57,9 @@ const openOverlay = (text = null) => {
     thinketMapsOverlay.style.transitionDuration = '0.5s';
 };
 
-const closeOverlay = () => {
-    const thinketMapsOverlay = document.getElementById('thinknetmaps-overlay');
-    const thinketMaps = document.getElementsByClassName('mapboxgl-canvas')[0];
+const closeOverlay = (container) => {
+    const thinketMapsOverlay = document.getElementById(`${container}-overlay`);
+    const thinketMaps = document.getElementById(`${container}-canvas`);
     thinketMapsOverlay.style.zIndex = -1;
     thinketMapsOverlay.style.opacity = 0;
     thinketMaps.style.zIndex = 1;
@@ -62,110 +67,121 @@ const closeOverlay = () => {
     thinketMapsOverlay.style.transitionDuration = '0.3s';
 };
 
-const handleMobile = (mobileText) => {
-    const thinketMapsOverlay = document.getElementById('thinknetmaps-overlay');
+const handleMobile = (mobileText, container, map) => {
+    const thinketMapsOverlay = document.getElementById(`${container}-overlay`);
     map.on('touchstart', (event) => {
         if (event.points.length < 2) {
-            openOverlay(mobileText);
+            openOverlay(mobileText, container);
             map.dragPan.disable();
         } else {
-            closeOverlay();
+            closeOverlay(container);
             map.dragPan.enable();
         }
     });
     thinketMapsOverlay.addEventListener('touchstart', (e) => {
         if (e.touches.length < 2) {
-            openOverlay(mobileText);
+            openOverlay(mobileText, container);
         } else {
-            closeOverlay();
+            closeOverlay(container);
             map.dragPan.enable();
         }
     });
     map.on('touchend', () => {
-        closeOverlay();
+        closeOverlay(container);
     });
 };
 
-const _onScroll = () => {
-    if (isOverlayClosed === 1) {
+const _onScroll = (container) => {
+    if (!isOverlayClosed[container]) {
         const textShow = isWin ? winText : macText;
-        openOverlay(textShow);
+        openOverlay(textShow, container);
     }
 };
 
-const _onKeydown = (e) => {
+const _onKeydown = (e, container, map) => {
+    const thinketMaps = document.getElementById(`${container}-canvas`);
     if (isWin) {
         if (e.ctrlKey) {
-            document.removeEventListener('wheel', _onScroll);
-            isOverlayClosed = 1;
-            closeOverlay();
+            isKeyUp[container] = false;
+            isOverlayClosed[container] = true;
+            thinketMaps.addEventListener('scroll', () => _onScroll(container));
+            thinketMaps.removeEventListener('wheel', () => _onScroll(container));
+            closeOverlay(container);
             map.scrollZoom.enable();
         }
     } else if (isMac) {
         if (e.metaKey) {
-            document.removeEventListener('wheel', _onScroll);
-            isOverlayClosed = 1;
-            closeOverlay();
+            isKeyUp[container] = false;
+            isOverlayClosed[container] = true;
+            thinketMaps.addEventListener('scroll', () =>  _onScroll(container));
+            thinketMaps.removeEventListener('wheel', () => _onScroll(container));
+            closeOverlay(container);
             map.scrollZoom.enable();
         }
     }
 };
 
-const _onMouseOver = () => {
-    isOverlayClosed = 1;
-};
-
-const _onMouseOut = () => {
-    isOverlayClosed = 0;
-    closeOverlay();
-};
-
-const _onKeyUp = (e) => {
+const _onKeyUp = (e, container, map) => {
+    const thinketMaps = document.getElementById(`${container}-canvas`);
     if (isWin) {
         if (e.which === 17) {
-            document.addEventListener('wheel', _onScroll);
+            isKeyUp[container] = true;
+            thinketMaps.addEventListener('wheel', () => _onScroll(container));
         }
     } else if (isMac) {
         if (e.which === 91) {
-            document.addEventListener('wheel', _onScroll);
+            isKeyUp[container] = true;
+            thinketMaps.addEventListener('wheel', () => _onScroll(container));
         }
     }
-    isOverlayClosed = 0;
+    isOverlayClosed[container] = false;
     map.scrollZoom.disable();
 };
 
-const handleDesktop = () => {
-    const thinketMaps = document.getElementsByClassName('mapboxgl-canvas')[0];
+const _onMouseOver = (container) => {
+    isOverlayClosed[container] = true;
+};
+
+const _onMouseOut = (container) => {
+    if (isKeyUp[container]) isOverlayClosed[container] = false;
+    closeOverlay(container);
+};
+
+const handleDesktop = (container, map) => {
+    const thinketMaps = document.getElementById(`${container}-canvas`);
     if (isWin || isMac) {
         map.scrollZoom.disable();
-        const thinketMapsOverlay = document.getElementById('thinknetmaps-overlay');
-        document.addEventListener('keydown', _onKeydown);
-        document.addEventListener('scroll', _onScroll);
-        document.addEventListener('wheel', _onScroll);
+        const thinketMapsOverlay = document.getElementById(`${container}-overlay`);
+        document.addEventListener('keydown', (e) => _onKeydown(e, container, map));
+        thinketMaps.addEventListener('scroll', () => _onScroll(container));
+        thinketMaps.addEventListener('wheel', () => _onScroll(container));
         thinketMaps.addEventListener('mouseover', _onMouseOver);
-        thinketMapsOverlay.addEventListener('mouseout', _onMouseOut);
-        document.body.addEventListener('keyup', _onKeyUp);
+        thinketMapsOverlay.addEventListener('mouseout', () => _onMouseOut(container));
+        document.body.addEventListener('keyup', (e) => _onKeyUp(e, container, map));
     }
 };
 
-const clearEventScroll = function () {
-    const thinketMaps = document.getElementsByClassName('mapboxgl-canvas')[0];
-    const thinketMapsOverlay = document.getElementById('thinknetmaps-overlay');
-    document.removeEventListener('keydown', _onKeydown);
-    document.removeEventListener('scroll', _onScroll);
-    document.removeEventListener('wheel', _onScroll);
-    thinketMaps.removeEventListener('mouseover', _onMouseOver);
-    thinketMapsOverlay.removeEventListener('mouseout', _onMouseOut);
-    document.body.removeEventListener('keyup', _onKeyUp);
+const clearEventScroll = () => {
+    const map = this;
+    const thinketMaps = document.getElementById(`${container}-canvas`);
+    const thinketMapsOverlay = document.getElementById(`${container}-overlay`);
+    document.addEventListener('keydown', (e) => _onKeydown(e, container, map));
+    thinketMaps.removeEventListener('scroll', () => _onScroll(container));
+    thinketMaps.removeEventListener('wheel', () => _onScroll(container));
+    thinketMaps.addEventListener('mouseover', () => _onMouseOver(container));
+    thinketMapsOverlay.addEventListener('mouseout', () => _onMouseOut(container));
+    document.body.addEventListener('keyup', (e) => _onKeyUp(e, container, map));
 };
 
-const disableScroll = function (newMap) {
-    map = newMap;
+const disableScroll = function (map, container) {
+    isOverlayClosed[container] = false;
     Logger.info(disableScroll.name);
-    overWrite();
-    initStyle();
-    handleMobile(mobileText);
-    handleDesktop(winText, macText);
+    const mapsCanvasArray = document.getElementsByClassName('mapboxgl-canvas');
+    mapsCanvasArray[mapsCanvasArray.length - 1].setAttribute("id", `${container}-canvas`);
+    overWrite(map);
+    initStyle(container, map);
+    handleMobile(mobileText, container, map);
+    handleDesktop(container, map);
 };
 
 export default {

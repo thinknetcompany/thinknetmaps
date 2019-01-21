@@ -94,9 +94,9 @@ class FillExtrusionBucket implements Bucket {
             const geometry = loadGeometry(feature);
 
             const patternFeature: BucketFeature = {
-                sourceLayerIndex: sourceLayerIndex,
-                index: index,
-                geometry: geometry,
+                sourceLayerIndex,
+                index,
+                geometry,
                 properties: feature.properties,
                 type: feature.type,
                 patterns: {}
@@ -112,7 +112,7 @@ class FillExtrusionBucket implements Bucket {
                 this.addFeature(patternFeature, geometry, index, {});
             }
 
-            options.featureIndex.insert(feature, geometry, index, sourceLayerIndex, this.index);
+            options.featureIndex.insert(feature, geometry, index, sourceLayerIndex, this.index, true);
         }
     }
 

@@ -40,7 +40,7 @@ const initColorMap = function (payload = {}) {
                 layers.push('tn-area_bldg');
             }
             layers.forEach(value => {
-                map.setPaintProperty(value, attribute, color);
+                this.setPaintProperty(value, attribute, color);
             });
         });
         Logger.info(initColorMap.name, null, payload);

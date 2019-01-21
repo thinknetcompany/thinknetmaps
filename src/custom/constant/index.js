@@ -13,7 +13,6 @@ const LOGGER_CONFIG_URL_DEV = 'http://localhost:5006/v1/log/get-config'
 const LOGGER_TIMER = 5000
 
 // constant function
-const LOGO_CLASSNAME = 'thinknetmaps-ctrl-logo'
 
 export {
   LOG_CONSTANT,
@@ -25,5 +24,4 @@ export {
   API_URL,
   NODE_ENV,
   LOGO_IMG,
-  LOGO_CLASSNAME,
 }

@@ -1,0 +1,1 @@
+webpackJsonp(["mapbox-gl-js-example-heatmap"],{"9FKS":function(e,t,a){"use strict";var p=a("nHBB");p=p.default||p,e.exports={component:p,props:{frontMatter:{}}}},nHBB:function(e,t,a){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var p,r=a("yi3i"),l=(p=r)&&p.__esModule?p:{default:p},o=a("QyVd");t.default=(0,l.default)((0,o.prefixUrl)("/example/heatmap-layer/"))}});

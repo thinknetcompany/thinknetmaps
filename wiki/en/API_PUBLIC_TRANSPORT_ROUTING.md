@@ -26,10 +26,10 @@ Find travel path by locate the start point and destination
 | Name | Description |
 |----|-----------|
 | seq | Routing sequences (edge, node) |
-| tn_type | Type of eact edge <br> 0 = Link between edge <br> 1 = Mass transit <br> 2 = Bus <br> 3 = Boat <br> 4 = Train <br> 5 = BRT |
+| mmg_type | Type of eact edge <br> 0 = Link between edge <br> 1 = Mass transit <br> 2 = Bus <br> 3 = Boat <br> 4 = Train <br> 5 = BRT |
 | time | Edge travel time (seconds) |
 | distance | Edge distance (metres) |
-| tn_id | Edge geometry ID <br> "10001" = Edge change (Get on) e.g. Get on the new bus line <br> "10002" = Edge change (Get off) e.g. Get off the current bus line <br> "20001" = Footpath edge <br> "อื่นๆ" = Another THiNKNET​ Maps edge ID |
+| mmg_id | Edge geometry ID <br> "10001" = Edge change (Get on) e.g. Get on the new bus line <br> "10002" = Edge change (Get off) e.g. Get off the current bus line <br> "20001" = Footpath edge <br> "อื่นๆ" = Another THiNKNET​ Maps edge ID |
 
 #### waypoint
 | Name | Description |
@@ -62,8 +62,8 @@ Find the route by start with node ID and set destination as node ID
           "seq":1,
           "time":600,
           "distance":5.12929303680556,
-          "tn_type":2,
-          "tn_id":"10002",
+          "mmg_type":2,
+          "mmg_id":"10002",
           "edge_id":"2427320",
           "nameth":"รถเมล์สาย 14",
           "nameen":"Bus No 14",
@@ -73,8 +73,8 @@ Find the route by start with node ID and set destination as node ID
           "seq":3,
           "time":215.177123074908,
           "distance":279.730249736935,
-          "tn_type":0,
-          "tn_id":"20001",
+          "mmg_type":0,
+          "mmg_id":"20001",
           "edge_id":"2520790",
           "nameth":"เดินจาก สวนลุมไนท์บาร์ซ่าร์ - สถานีรถไฟฟ้าใต้ดิน สถานีลุมพินี",
           "nameen":"Walk : Suanlum Night Barzar - สถานีรถไฟฟ้าใต้ดิน สถานีลุมพินี",
@@ -86,7 +86,7 @@ Find the route by start with node ID and set destination as node ID
         {
           "seq":2,
           "node_id":"11563",
-          "tn_type":2,
+          "mmg_type":2,
           "nameth":"สวนลุมไนท์บาร์ซ่าร์",
           "nameen":"Suanlum Night Barzar",
           "geom":"{\"type\":\"Point\",\"coordinates\":[100.544741762543,13.7280704977612]}"
@@ -94,7 +94,7 @@ Find the route by start with node ID and set destination as node ID
         {
           "seq":4,
           "node_id":"637",
-          "tn_type":1,
+          "mmg_type":1,
           "nameth":"สถานีรถไฟฟ้าใต้ดิน สถานีลุมพินี",
           "nameen":"สถานีรถไฟฟ้าใต้ดิน สถานีลุมพินี",
           "geom":"{\"type\":\"Point\",\"coordinates\":[100.545675,13.725804]}"
@@ -126,8 +126,8 @@ Find the route by start with Latitude, Longitude and set destination as node ID
           "seq":2,
           "time":273.8577637387383,
           "distance":356.0150928603598,
-          "tn_type":0,
-          "tn_id":"20001",
+          "mmg_type":0,
+          "mmg_id":"20001",
           "edge_id":"2515757",
           "nameth":"เดินจาก 13.727151,100.531407 ไป สถานีรถไฟฟ้าบีทีเอสศาลาแดง",
           "nameen":"Walk : $13.727151,100.531407 to สถานีรถไฟฟ้าบีทีเอสศาลาแดง",
@@ -137,8 +137,8 @@ Find the route by start with Latitude, Longitude and set destination as node ID
           "seq":4,
           "time":60,
           "distance":0.721636268594103,
-          "tn_type":1,
-          "tn_id":"10001",
+          "mmg_type":1,
+          "mmg_id":"10001",
           "edge_id":"2401588",
           "nameth":"รถไฟฟ้า BTS สายสีลม",
           "nameen":"BTS Skytrain Silom Line",
@@ -150,7 +150,7 @@ Find the route by start with Latitude, Longitude and set destination as node ID
         {
           "seq":1,
           "node_id":"-1",
-          "tn_type":0,
+          "mmg_type":0,
           "nameth":"13.727151,100.531407",
           "nameen":"13.727151,100.531407",
           "geom":"{\"type\":\"Point\",\"coordinates\":[100.531407,13.727151]}"
@@ -158,7 +158,7 @@ Find the route by start with Latitude, Longitude and set destination as node ID
         {
           "seq":3,
           "node_id":"85",
-          "tn_type":1,
+          "mmg_type":1,
           "nameth":"สถานีรถไฟฟ้าบีทีเอสศาลาแดง",
           "nameen":"สถานีรถไฟฟ้าบีทีเอสศาลาแดง",
           "geom":"{\"type\":\"Point\",\"coordinates\":[100.534365682209,13.7285617330323]}"
@@ -190,8 +190,8 @@ Find the route by start with Latitude, Longitude and set destination as Latitude
           "seq":2,
           "time":273.8577637387383,
           "distance":356.0150928603598,
-          "tn_type":0,
-          "tn_id":"20001",
+          "mmg_type":0,
+          "mmg_id":"20001",
           "edge_id":"2515757",
           "nameth":"เดินจาก 13.727151,100.531407 ไป สถานีรถไฟฟ้าบีทีเอสศาลาแดง",
           "nameen":"Walk : $13.727151,100.531407 to สถานีรถไฟฟ้าบีทีเอสศาลาแดง",
@@ -201,8 +201,8 @@ Find the route by start with Latitude, Longitude and set destination as Latitude
           "seq":4,
           "time":60,
           "distance":0.721636268594103,
-          "tn_type":1,
-          "tn_id":"10001",
+          "mmg_type":1,
+          "mmg_id":"10001",
           "edge_id":"2401588",
           "nameth":"รถไฟฟ้า BTS สายสีลม",
           "nameen":"BTS Skytrain Silom Line",
@@ -214,7 +214,7 @@ Find the route by start with Latitude, Longitude and set destination as Latitude
         {
           "seq":1,
           "node_id":"-1",
-          "tn_type":0,
+          "mmg_type":0,
           "nameth":"13.727151,100.531407",
           "nameen":"13.727151,100.531407",
           "geom":"{\"type\":\"Point\",\"coordinates\":[100.531407,13.727151]}"
@@ -222,7 +222,7 @@ Find the route by start with Latitude, Longitude and set destination as Latitude
         {
           "seq":3,
           "node_id":"85",
-          "tn_type":1,
+          "mmg_type":1,
           "nameth":"สถานีรถไฟฟ้าบีทีเอสศาลาแดง",
           "nameen":"สถานีรถไฟฟ้าบีทีเอสศาลาแดง",
           "geom":"{\"type\":\"Point\",\"coordinates\":[100.534365682209,13.7285617330323]}"

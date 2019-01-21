@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Remove Marker</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc0.min.js'></script>
+    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc0.min.css' rel='stylesheet' />
+    <style>
+        #map {
+            height: 90vh;
+            width: 100%;
+        }
+        .button {
+            padding: 10px;
+            position: absolute;
+            z-index: 999;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+    <button class="button" onclick="removeMarker();" >Remove Marker</button>
+    <script>
+        const map = new thinknetmaps.Map({
+            container: 'map',
+            app_id: '<your_api_key>',
+            api_key: '<your_api_key>',
+        });
+
+        map.on('load', function () {
+            map.addMarker({
+                id: 'somewhere',
+                lat: 13.7,
+                lng: 100.35,
+            });
+        })
+
+        const removeMarker = () => {
+            map.removeMarker('somewhere')
+        }
+    </script>
+</body>
+
+</html>

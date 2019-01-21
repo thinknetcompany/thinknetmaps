@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // @flow
 import logger from 'beaver-logger';
 import { LOGGER_URL, LOGGER_TIMER } from '../constant';
@@ -8,7 +9,7 @@ const defaultLogger = (logCallback) => (
     functionName,
     message = '',
     args = {},
-    emitLog = true,
+    emitLog = true
 ) => {
     const url = window.location.href;
     const userAgent = navigator.userAgent;

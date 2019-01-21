@@ -5,8 +5,8 @@
     <meta charset='utf-8' />
     <title>popup</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.0.0.min.js'></script>
-    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.0.0.min.css' rel='stylesheet' />
+    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc0.min.js'></script>
+    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc0.min.css' rel='stylesheet' />
     <style>
         #map {
             height: 90vh;
@@ -33,10 +33,10 @@
                 id: 'pin',
                 lng: 100.49,
                 lat: 13.90,
-                description: '<h1> Hello World </h1>',
                 draggable: true,
                 popup: {
                     action: 'click',
+                    description: '<h1> Hello World </h1>',
                     anchor: 'bottom-left',
                     offset: [0, -20],
                 }
@@ -47,10 +47,10 @@
                 lng: 100.49,
                 lat: 13.72,
                 icon: 'mmg_car_2_orange',
-                description: 'รถ ว. บางบอน 2',
                 draggable: true,
                 popup: {
                     action: 'show',
+                    description: 'รถ ว. บางบอน 2',
                     anchor: 'bottom-left',
                     offset: [0, -20],
                 }
@@ -61,11 +61,11 @@
                 lng: 100.40,
                 lat: 13.72,
                 icon: 'mmg_building_5_orange',
-                description: 'ตึกพัฒน์',
             })
 
             map.addPopup({
                 id: 'buildings',
+                description: 'ตึกพัฒน์',
                 action: 'hover',
                 anchor: 'bottom-right'
             })

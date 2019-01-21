@@ -258,22 +258,24 @@ class Tile {
     // Symbol features are queried globally
     queryRenderedFeatures(layers: {[string]: StyleLayer},
                           sourceFeatureState: SourceFeatureState,
-                          queryGeometry: Array<Array<Point>>,
+                          queryGeometry: Array<Point>,
+                          cameraQueryGeometry: Array<Point>,
                           scale: number,
                           params: { filter: FilterSpecification, layers: Array<string> },
                           transform: Transform,
                           maxPitchScaleFactor: number,
-                          posMatrix: Float32Array): {[string]: Array<{ featureIndex: number, feature: GeoJSONFeature }>} {
+                          pixelPosMatrix: Float32Array): {[string]: Array<{ featureIndex: number, feature: GeoJSONFeature }>} {
         if (!this.latestFeatureIndex || !this.latestFeatureIndex.rawTileData)
             return {};
 
         return this.latestFeatureIndex.query({
-            queryGeometry: queryGeometry,
-            scale: scale,
+            queryGeometry,
+            cameraQueryGeometry,
+            scale,
             tileSize: this.tileSize,
-            posMatrix: posMatrix,
-            transform: transform,
-            params: params,
+            pixelPosMatrix,
+            transform,
+            params,
             queryPadding: this.queryPadding * maxPitchScaleFactor
         }, layers, sourceFeatureState);
     }

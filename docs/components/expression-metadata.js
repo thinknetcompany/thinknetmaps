@@ -168,6 +168,13 @@ const types = {
             '...',
             'input_n: string, options_n: { "font-scale": number, "text-font": array<string> }'
         ]
+    }],
+    'number-format': [{
+        type: 'string',
+        parameters: [
+            'input: number',
+            'options: { "locale": string, "currency": string, "min-fraction-digits": number, "max-fraction-digits": number }'
+        ]
     }]
 };
 
@@ -200,7 +207,7 @@ for (const name in types) {
     expressionGroups[spec.group] = expressionGroups[spec.group] || [];
     expressionGroups[spec.group].push(name);
     expressions[name] = {
-        name: name,
+        name,
         doc: spec.doc,
         type: types[name],
         sdkSupport: spec['sdk-support']

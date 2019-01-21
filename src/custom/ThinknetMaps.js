@@ -7,7 +7,7 @@ import Logger from './util/Logger';
 import { isLight } from './util/Color';
 import LogoControl from './ui/LogoControl';
 import getLogConfig from './util/getLogConfig';
-import { API_URL, LOGO_CLASSNAME } from './constant';
+import { API_URL } from './constant';
 import {
     Style,
     Marker,
@@ -16,9 +16,13 @@ import {
     Geometry,
 } from './lib';
 
+let LOGO_CLASSNAME = 'thinknetmaps-logo';
+
 class ThinknetMaps extends Map {
     constructor(options) {
+        const container = options.container;
         const newStyle = options.style;
+        LOGO_CLASSNAME = `${container}-logo`;
         options.style = undefined;
         if (!options.zoom) {
             options['zoom'] = 9;
@@ -44,7 +48,7 @@ class ThinknetMaps extends Map {
         this.setStyle(styleURL);
         this.on('style.load', this.setLogo);
         if (options.protectScroll === true) {
-            Handler.disableScroll(this);
+            Handler.disableScroll(this, container);
         }
         if (options.navigationCtrl) {
             this.addControl(new NavigationControl());
@@ -85,7 +89,7 @@ class ThinknetMaps extends Map {
             this.addControl(new LogoControl(), 'bottom-left');
         }
         const backgroundColor = style.stylesheet.layers[0].paint['background-color'];
-        this.logoSrc = isLight(backgroundColor) ? '' : 'dark';
+        this.logoSrc = isLight(backgroundColor) ? '' : 'white';
         const logoElement = document.getElementsByClassName(LOGO_CLASSNAME)[0];
         if (logoElement) {
             logoElement.className = `${LOGO_CLASSNAME} ${this.logoSrc}`;
@@ -98,7 +102,7 @@ ThinknetMaps.prototype = extend(ThinknetMaps.prototype,
     Popup,
     Style,
     Geometry,
-    Handler,
+    Handler
 );
 
 export default ThinknetMaps;

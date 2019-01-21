@@ -10,8 +10,8 @@ a.thinknetmaps-ctrl-logo {
   background-image: svg-load('svg/THiNKNET_Maps_color.svg');
 }
 
-a.thinknetmaps-ctrl-logo.dark {
-  background-image: svg-load('svg/THiNKNET_Maps_black.svg');
+a.thinknetmaps-ctrl-logo.white {
+  background-image: svg-load('svg/THiNKNET_Maps_white.svg');
 }
 
 .mapboxgl-missing-css {

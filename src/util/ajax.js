@@ -3,6 +3,8 @@
 import window from './window';
 import { extend } from './util';
 import { isMapboxHTTPURL } from './mapbox';
+import config from './config';
+import assert from 'assert';
 
 import type { Callback } from '../types/callback';
 import type { Cancelable } from '../types/cancelable';
@@ -104,11 +106,15 @@ function makeFetchRequest(requestParameters: RequestParameters, callback: Respon
         if (response.ok) {
             response[requestParameters.type || 'text']().then(result => {
                 callback(null, result, response.headers.get('Cache-Control'), response.headers.get('Expires'));
-            }).catch(callback);
+            }).catch(err => callback(new Error(err.message)));
         } else {
             callback(new AJAXError(response.statusText, response.status, requestParameters.url));
         }
     }).catch((error) => {
+        if (error.code === 20) {
+            // silence expected AbortError
+            return;
+        }
         callback(new Error(error.message));
     });
 
@@ -174,10 +180,48 @@ function sameOrigin(url) {
 
 const transparentPngUrl = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVQYV2NgAAIAAAUAAarVyFEAAAAASUVORK5CYII=';
 
+let imageQueue, numImageRequests;
+export const resetImageRequestQueue = () => {
+    imageQueue = [];
+    numImageRequests = 0;
+};
+resetImageRequestQueue();
+
 export const getImage = function(requestParameters: RequestParameters, callback: Callback<HTMLImageElement>): Cancelable {
+    // limit concurrent image loads to help with raster sources performance on big screens
+    if (numImageRequests >= config.MAX_PARALLEL_IMAGE_REQUESTS) {
+        const queued = {
+            requestParameters,
+            callback,
+            cancelled: false,
+            cancel() { this.cancelled = true; }
+        };
+        imageQueue.push(queued);
+        return queued;
+    }
+    numImageRequests++;
+
+    let advanced = false;
+    const advanceImageRequestQueue = () => {
+        if (advanced) return;
+        advanced = true;
+        numImageRequests--;
+        assert(numImageRequests >= 0);
+        while (imageQueue.length && numImageRequests < config.MAX_PARALLEL_IMAGE_REQUESTS) { // eslint-disable-line
+            const request = imageQueue.shift();
+            const {requestParameters, callback, cancelled} = request;
+            if (!cancelled) {
+                request.cancel = getImage(requestParameters, callback).cancel;
+            }
+        }
+    };
+
     // request the image with XHR to work around caching issues
     // see https://github.com/mapbox/mapbox-gl-js/issues/1470
-    return getArrayBuffer(requestParameters, (err: ?Error, data: ?ArrayBuffer, cacheControl: ?string, expires: ?string) => {
+    const request = getArrayBuffer(requestParameters, (err: ?Error, data: ?ArrayBuffer, cacheControl: ?string, expires: ?string) => {
+
+        advanceImageRequestQueue();
+
         if (err) {
             callback(err);
         } else if (data) {
@@ -194,6 +238,13 @@ export const getImage = function(requestParameters: RequestParameters, callback:
             img.src = data.byteLength ? URL.createObjectURL(blob) : transparentPngUrl;
         }
     });
+
+    return {
+        cancel: () => {
+            request.cancel();
+            advanceImageRequestQueue();
+        }
+    };
 };
 
 export const getVideo = function(urls: Array<string>, callback: Callback<HTMLVideoElement>): Cancelable {
