@@ -5,6 +5,47 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.show-overlay {
+    animation: show-overlay-animate 0.3s;
+    animation-fill-mode: forwards;
+    -webkit-animation: show-overlay-animate 0.3s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes show-overlay-animate {
+    0%   {z-index: 2;}
+    100% {opacity: 0.5; z-index: 2;}
+}
+
+@-webkit-keyframes show-overlay-animate {
+    0%   {z-index: 2;}
+    100% {opacity: 0.5; z-index: 2;}
+}
+
+.hide-overlay {
+    animation: hide-overlay-animate 0.3s;
+    animation-fill-mode: forwards;
+    -webkit-animation: hide-overlay-animate 0.3s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes hide-overlay-animate {
+    0%   {opacity: 0.5; z-index: 2;}
+    90% {opacity: 0; z-index: 2;}
+    100% {opacity: 0; z-index: 0;}
+}
+
+@-webkit-keyframes hide-overlay-animate {
+    0%   {opacity: 0.5; z-index: 2;}
+    90% {opacity: 0; z-index: 2;}
+    100% {opacity: 0; z-index: 0;}
+}
+
+.hide-overlay {
+    opacity: 0.5;
+    transition-duration: 0.3s;
+}
+
 .mapboxgl-map:-webkit-full-screen {
     width: 100%;
     height: 100%;

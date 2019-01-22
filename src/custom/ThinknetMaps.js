@@ -1,13 +1,19 @@
 // @flow
-import { extend } from '../util/util';
+import {
+    extend
+} from '../util/util';
 import Map from '../ui/map';
 import NavigationControl from '../ui/control/navigation_control';
 import Debugger from './util/Debugger';
 import Logger from './util/Logger';
-import { isLight } from './util/Color';
+import {
+    isLight
+} from './util/Color';
 import LogoControl from './ui/LogoControl';
 import getLogConfig from './util/getLogConfig';
-import { API_URL } from './constant';
+import {
+    API_URL
+} from './constant';
 import {
     Style,
     Marker,
@@ -16,13 +22,12 @@ import {
     Geometry,
 } from './lib';
 
-let LOGO_CLASSNAME = 'thinknetmaps-logo';
-
 class ThinknetMaps extends Map {
+    LOGO_CLASSNAME;
+    handler;
     constructor(options) {
         const container = options.container;
         const newStyle = options.style;
-        LOGO_CLASSNAME = `${container}-logo`;
         options.style = undefined;
         if (!options.zoom) {
             options['zoom'] = 9;
@@ -30,12 +35,17 @@ class ThinknetMaps extends Map {
         let center = [100.49, 13.72];
         if (options.center) {
             if (options.center.lng && options.center.lat) {
-                const { lng, lat } = options.center;
+                const {
+                    lng,
+                    lat
+                } = options.center;
                 center = [lng, lat];
             }
         }
         options.center = center;
         super(options);
+        this.LOGO_CLASSNAME = `${container}-logo`;
+        this.container = container;
         this.appId = options.appId || options.app_id;
         getLogConfig((config) => {
             Logger.init(this.appId, config.isLogging, config.isDebug);
@@ -46,9 +56,21 @@ class ThinknetMaps extends Map {
         this.options = options;
         const styleURL = this.getStyleURL(newStyle, options);
         this.setStyle(styleURL);
-        this.on('style.load', this.setLogo);
+        this.on('style.load', ({
+            style
+        }) => {
+            if (this.LOGO_CLASSNAME) this.setLogo({
+                style,
+                container
+            });
+            this.LOGO_CLASSNAME = null;
+        });
         if (options.protectScroll === true) {
-            Handler.disableScroll(this, container);
+            this.handler = {
+                isOverlayClosed: true,
+                isKeyUp: true
+            };
+            this.disableScroll(this, container);
         }
         if (options.navigationCtrl) {
             this.addControl(new NavigationControl());
@@ -84,15 +106,17 @@ class ThinknetMaps extends Map {
         super.setStyle(styleURL, option);
     }
 
-    setLogo({ style }) {
-        if (!document.getElementsByClassName(LOGO_CLASSNAME)[0]) {
+    setLogo({
+        style
+    }) {
+        if (!document.getElementsByClassName(this.LOGO_CLASSNAME)[0]) {
             this.addControl(new LogoControl(), 'bottom-left');
         }
         const backgroundColor = style.stylesheet.layers[0].paint['background-color'];
         this.logoSrc = isLight(backgroundColor) ? '' : 'white';
-        const logoElement = document.getElementsByClassName(LOGO_CLASSNAME)[0];
+        const logoElement = document.getElementsByClassName(this.LOGO_CLASSNAME)[0];
         if (logoElement) {
-            logoElement.className = `${LOGO_CLASSNAME} ${this.logoSrc}`;
+            logoElement.className = `${this.LOGO_CLASSNAME} ${this.logoSrc}`;
         }
     }
 }

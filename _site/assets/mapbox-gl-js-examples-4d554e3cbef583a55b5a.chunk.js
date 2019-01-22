@@ -1,1 +1,0 @@
-webpackJsonp(["mapbox-gl-js-examples"],{imqJ:function(e,t,a){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var p,l=a("yi3i"),o=(p=l)&&p.__esModule?p:{default:p},r=a("QyVd");t.default=(0,o.default)((0,r.prefixUrl)("/example/simple-map/"))},"y+Px":function(e,t,a){"use strict";var p=a("imqJ");p=p.default||p,e.exports={component:p,props:{frontMatter:{}}}}});

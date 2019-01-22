@@ -15,6 +15,7 @@ const eventShow = function (map, id, geojson) {
         .setLngLat(geojson.features[0].geometry.coordinates)
         .setHTML(geojson.features[0].properties.description)
         .addTo(map);
+    popups[id]._container.style.zIndex = 1;
 };
 
 const eventClick = function (map, id, payload) {
@@ -25,6 +26,7 @@ const eventClick = function (map, id, payload) {
         }).setLngLat(e.features[0].geometry.coordinates)
             .setHTML(e.features[0].properties.description)
             .addTo(this);
+        popups[id]._container.style.zIndex = 1;
     });
     map.on('mouseenter', id, function () {
         this.getCanvas().style.cursor = 'pointer';
@@ -46,6 +48,7 @@ const eventHover = function (map, id, payload) {
         popup.setLngLat(e.features[0].geometry.coordinates)
             .setHTML(e.features[0].properties.description)
             .addTo(this);
+        popup._container.style.zIndex = 1;
     });
     map.on('mouseleave', id, function () {
         this.getCanvas().style.cursor = '';
