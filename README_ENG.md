@@ -16,7 +16,7 @@ for manage your API key and retrieve access to THiNKNET Maps on your application
 - [ ] Improves addLine function
 - [ ] Adjust shape of line and polygon
 
-## :pushpin: Release Notes 1.1.0-rc1
+## :pushpin: Release Notes 1.1.0-rc2
 
 - [x] Better Marker and Popup event listener manipulation
 - [x] Enable to get layer and source of Marker by put its id
@@ -30,6 +30,7 @@ for manage your API key and retrieve access to THiNKNET Maps on your application
 - [x] Fixed a map can't use when running many maps on a single page
 - [x] Fixed THiNKNET Maps logo don't display when running many maps on a single page
 - [x] Fixed Popup missing on Maps
+- [x] Fixed bug clearEventScroll function can't available.
 
 ## :clipboard: Features
 
@@ -67,8 +68,8 @@ require('node_modules/thinknetmaps/dist/thinknetmaps.css')
 ### Alternatively, download from THiNKNET server to embed on HTML
 
 ```html
-<script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc1.min.js'></script>
-<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc1.min.css' rel='stylesheet' />
+<script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc2.min.js'></script>
+<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc2.min.css' rel='stylesheet' />
 ```
 
 ## :electric_plug: Get started with THiNKNET Maps API
@@ -83,8 +84,8 @@ Create div to make render area for map, but you should have both of `app_id` and
 ```html
 <html>
   <head>
-    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc1.min.js'></script>
-    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc1.min.css' rel='stylesheet' />
+    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc2.min.js'></script>
+    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc2.min.css' rel='stylesheet' />
   </head>
   <body>
     <div id="map" style="height: 100vh;" />
@@ -609,12 +610,12 @@ map.on('load', function() {
 ## :bulb: Code Example
 
 ```html
-<html>
+<html>s
   <head>
     <title>DEMO</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc1.min.js'></script>
-    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc1.min.css' rel='stylesheet' />
+    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc2.min.js'></script>
+<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc2.min.css' rel='stylesheet' />
   </head>
   <body>
     <div id="map" style="height: 100vh;"></div>

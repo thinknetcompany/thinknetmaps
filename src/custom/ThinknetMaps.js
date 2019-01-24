@@ -23,7 +23,7 @@ import {
 } from './lib';
 
 class ThinknetMaps extends Map {
-    LOGO_CLASSNAME;
+    logoClassName;
     handler;
     constructor(options) {
         const container = options.container;
@@ -44,7 +44,7 @@ class ThinknetMaps extends Map {
         }
         options.center = center;
         super(options);
-        this.LOGO_CLASSNAME = `${container}-logo`;
+        this.logoClassName = `${container}-logo`;
         this.container = container;
         this.appId = options.appId || options.app_id;
         getLogConfig((config) => {
@@ -59,11 +59,11 @@ class ThinknetMaps extends Map {
         this.on('style.load', ({
             style
         }) => {
-            if (this.LOGO_CLASSNAME) this.setLogo({
+            if (this.logoClassName) this.setLogo({
                 style,
                 container
             });
-            this.LOGO_CLASSNAME = null;
+            this.logoClassName = null;
         });
         if (options.protectScroll === true) {
             this.handler = {
@@ -109,14 +109,14 @@ class ThinknetMaps extends Map {
     setLogo({
         style
     }) {
-        if (!document.getElementsByClassName(this.LOGO_CLASSNAME)[0]) {
+        if (!document.getElementsByClassName(this.logoClassName)[0]) {
             this.addControl(new LogoControl(), 'bottom-left');
         }
         const backgroundColor = style.stylesheet.layers[0].paint['background-color'];
         this.logoSrc = isLight(backgroundColor) ? '' : 'white';
-        const logoElement = document.getElementsByClassName(this.LOGO_CLASSNAME)[0];
+        const logoElement = document.getElementsByClassName(this.logoClassName)[0];
         if (logoElement) {
-            logoElement.className = `${this.LOGO_CLASSNAME} ${this.logoSrc}`;
+            logoElement.className = `${this.logoClassName} ${this.logoSrc}`;
         }
     }
 }

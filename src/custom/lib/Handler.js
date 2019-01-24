@@ -48,20 +48,20 @@ const initStyle = (map) => {
 };
 
 const openOverlay = (text = null, map) => {
-    const thinketMapsOverlay = document.getElementById(`${map.container}-overlay`);
-    thinketMapsOverlay.innerHTML = text;
-    thinketMapsOverlay.classList.remove('hide-overlay');
-    thinketMapsOverlay.classList.add('show-overlay');
+    const thinknetMapsOverlay = document.getElementById(`${map.container}-overlay`);
+    thinknetMapsOverlay.innerHTML = text;
+    thinknetMapsOverlay.classList.remove('hide-overlay');
+    thinknetMapsOverlay.classList.add('show-overlay');
 };
 
 const closeOverlay = (map) => {
-    const thinketMapsOverlay = document.getElementById(`${map.container}-overlay`);
-    thinketMapsOverlay.classList.remove('show-overlay');
-    thinketMapsOverlay.classList.add('hide-overlay');
+    const thinknetMapsOverlay = document.getElementById(`${map.container}-overlay`);
+    thinknetMapsOverlay.classList.remove('show-overlay');
+    thinknetMapsOverlay.classList.add('hide-overlay');
 };
 
 const handleMobile = (mobileText, map) => {
-    const thinketMapsOverlay = document.getElementById(`${map.container}-overlay`);
+    const thinknetMapsOverlay = document.getElementById(`${map.container}-overlay`);
     map.on('touchstart', (event) => {
         if (event.points.length < 2) {
             openOverlay(mobileText, map);
@@ -71,7 +71,7 @@ const handleMobile = (mobileText, map) => {
             map.dragPan.enable();
         }
     });
-    thinketMapsOverlay.addEventListener('touchstart', (e) => {
+    thinknetMapsOverlay.addEventListener('touchstart', (e) => {
         if (e.touches.length < 2) {
             openOverlay(mobileText, map);
         } else {
@@ -92,11 +92,11 @@ const _onScroll = (map) => {
 };
 
 const keydownAction = (map) => {
-    const thinketMaps = document.getElementById(`${map.container}-canvas`);
+    const thinknetMaps = document.getElementById(`${map.container}-canvas`);
     map.handler.isKeyUp = false;
     map.handler.isOverlayClosed = true;
-    thinketMaps.addEventListener('scroll', () => _onScroll(map));
-    thinketMaps.removeEventListener('wheel', () => _onScroll(map));
+    thinknetMaps.addEventListener('scroll', () => _onScroll(map));
+    thinknetMaps.removeEventListener('wheel', () => _onScroll(map));
     closeOverlay(map);
     map.scrollZoom.enable();
 };
@@ -110,9 +110,9 @@ const _onKeydown = (e,  map) => {
 };
 
 const keyUpAction = (map) => {
-    const thinketMaps = document.getElementById(`${map.container}-canvas`);
+    const thinknetMaps = document.getElementById(`${map.container}-canvas`);
     map.handler.isKeyUp = true;
-    thinketMaps.addEventListener('wheel', () => _onScroll(map));
+    thinknetMaps.addEventListener('wheel', () => _onScroll(map));
 };
 
 const _onKeyUp = (e, map) => {
@@ -135,28 +135,28 @@ const _onMouseOut = (map) => {
 };
 
 const handleDesktop = (map) => {
-    const thinketMaps = document.getElementById(`${map.container}-canvas`);
+    const thinknetMaps = document.getElementById(`${map.container}-canvas`);
     if (isWin || isMac) {
         map.scrollZoom.disable();
-        const thinketMapsOverlay = document.getElementById(`${map.container}-overlay`);
+        const thinknetMapsOverlay = document.getElementById(`${map.container}-overlay`);
         document.addEventListener('keydown', (e) => _onKeydown(e, map));
-        thinketMaps.addEventListener('scroll', () => _onScroll(map));
-        thinketMaps.addEventListener('wheel', () => _onScroll(map));
-        thinketMaps.addEventListener('mouseover', () => _onMouseOver(map));
-        thinketMapsOverlay.addEventListener('mouseout', () => _onMouseOut(map));
+        thinknetMaps.addEventListener('scroll', () => _onScroll(map));
+        thinknetMaps.addEventListener('wheel', () => _onScroll(map));
+        thinknetMaps.addEventListener('mouseover', () => _onMouseOver(map));
+        thinknetMapsOverlay.addEventListener('mouseout', () => _onMouseOut(map));
         document.body.addEventListener('keyup', (e) => _onKeyUp(e, map));
     }
 };
 
-const clearEventScroll = () => {
+const clearEventScroll = function () {
     const map = this;
-    const thinketMaps = document.getElementById(`${map.container}-canvas`);
-    const thinketMapsOverlay = document.getElementById(`${map.container}-overlay`);
+    const thinknetMaps = document.getElementById(`${map.container}-canvas`);
+    const thinknetMapsOverlay = document.getElementById(`${map.container}-overlay`);
     document.addEventListener('keydown', (e) => _onKeydown(e, map));
-    thinketMaps.removeEventListener('scroll', () => _onScroll(map));
-    thinketMaps.removeEventListener('wheel', () => _onScroll(map));
-    thinketMaps.addEventListener('mouseover', () => _onMouseOver(map));
-    thinketMapsOverlay.addEventListener('mouseout', () => _onMouseOut(map));
+    thinknetMaps.removeEventListener('scroll', () => _onScroll(map));
+    thinknetMaps.removeEventListener('wheel', () => _onScroll(map));
+    thinknetMaps.addEventListener('mouseover', () => _onMouseOver(map));
+    thinknetMapsOverlay.addEventListener('mouseout', () => _onMouseOut(map));
     document.body.addEventListener('keyup', (e) => _onKeyUp(e, map));
 };
 

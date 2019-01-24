@@ -1,7 +1,7 @@
 
 ## Release Notes
 
-Release Notes 1.1.0-rc1
+Release Notes 1.1.0-rc2
 
 - [x] ปรับปรุงการจัดการ Event listener ของ Marker และ Popup ในแผนที่
 - [x] ฟังก์ชัน getMarker สำหรับเรียกข้อมูล Marker ที่ id นั้น
@@ -14,4 +14,4 @@ Release Notes 1.1.0-rc1
 - [x] ฟังก์ชัน addPopup สำหรับการเพิ่ม Popup ให้ Marker
 - [x] แก้ไขแผนที่ไม่สามารถใช้งานได้ เมื่อเปิดหลายแผนที่ในหน้าเว็บเดียวกัน
 - [x] แก้ไขโลโก้ไม่แสดง เมื่อเปิดหลายแผนที่ในหน้าเว็บเดียวกัน
-- [x] แก้ไข Popup ไม่แสดงบนแผนที่
+- [x] แก้ bug ฟังก์ชัน clearEventScroll ไม่สามารถใช้งานได้
