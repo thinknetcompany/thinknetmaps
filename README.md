@@ -17,7 +17,7 @@
 - [ ] ปรับปรุงฟังก์ชัน addLine
 - [ ] แก้ไขรูปทรงของ line และ polygon ได้
 
-## :pushpin: Release Notes 1.1.0-rc2
+## :pushpin: Release Notes 1.1.0
 
 - [x] ปรับปรุงการจัดการ Event listener ของ Marker และ Popup ในแผนที่
 - [x] ฟังก์ชัน getMarker สำหรับเรียกข้อมูล Marker ที่ id นั้น
@@ -69,8 +69,8 @@ require('node_modules/thinknetmaps/dist/thinknetmaps.css')
 ### หรือดาวน์โหลดจาก THiNKNET Maps Server สำหรับใช้บน HTML
 
 ```html
-<script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc2.min.js'></script>
-<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc2.min.css' rel='stylesheet' />
+<script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.js'></script>
+<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.css' rel='stylesheet' />
 ```
 
 ## :electric_plug: เริ่มใช้งาน THiNKNET Maps API
@@ -85,8 +85,8 @@ require('node_modules/thinknetmaps/dist/thinknetmaps.css')
 ```html
 <html>
   <head>
-    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc2.min.js'></script>
-    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc2.min.css' rel='stylesheet' />
+    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.js'></script>
+    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.css' rel='stylesheet' />
   </head>
   <body>
     <div id="map" style="height: 100vh;" />
@@ -615,8 +615,8 @@ map.on('load', function() {
   <head>
     <title>DEMO</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc2.min.js'></script>
-<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0-rc2.min.css' rel='stylesheet' />
+    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.js'></script>
+<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.css' rel='stylesheet' />
   </head>
   <body>
     <div id="map" style="height: 100vh;"></div>
