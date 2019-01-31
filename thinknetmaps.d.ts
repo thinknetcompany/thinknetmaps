@@ -1,3 +1,5 @@
+import { Interface } from "readline";
+
 // Type definitions for thinknetmaps v1.1.0
 // Project: https://github.com/thinknetcompany/thinknetmaps
 // Definitions by: THiNKNET Maps Company <https://github.com/thinknetcompany>
@@ -75,7 +77,7 @@ declare namespace thinknetmaps {
         zoom?: number;
 
         /** If true, Enable navigation controller. */
-        navigationCtrl?: boolean;
+        navigationCtrl?: boolean | navigationOption;
 
         /** If true, Enable protected scroll. */
         protectScroll?: boolean;
@@ -226,6 +228,14 @@ declare namespace thinknetmaps {
 
         // https://github.com/mapbox/mapbox-gl-js/issues/6522
         fire(type: string, properties?: { [key: string]: any }): this;
+    }
+
+    export interface navigationOption {
+        showZoom? :boolean;
+
+        showCompass?: boolean;
+
+        position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
     }
 
 }

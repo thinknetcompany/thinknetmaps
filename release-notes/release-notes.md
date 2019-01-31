@@ -1,6 +1,12 @@
 
 ## Release Notes
 
+Release Notes 1.2.0-rc0
+- [x] ปรับ navigation ให้สามารถปรับแต่งได้มากชึ้น
+
+Release Notes 1.1.0
+- [x] เช็คความเรียบร้อยของฟังก์ชั่น
+
 Release Notes 1.1.0-rc2
 
 - [x] ปรับปรุงการจัดการ Event listener ของ Marker และ Popup ในแผนที่

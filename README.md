@@ -17,7 +17,7 @@
 - [ ] ปรับปรุงฟังก์ชัน addLine
 - [ ] แก้ไขรูปทรงของ line และ polygon ได้
 
-## :pushpin: Release Notes 1.1.0
+## :pushpin: Release Notes 1.2.0-rc0
 
 - [x] ปรับปรุงการจัดการ Event listener ของ Marker และ Popup ในแผนที่
 - [x] ฟังก์ชัน getMarker สำหรับเรียกข้อมูล Marker ที่ id นั้น
@@ -42,6 +42,7 @@
 - [Scrolling protection](#protected-scrolling)
 - [Marker](#marker)
 - [Geometry](#geometry)
+- [Navigation](#navigation)
 - [API Document](#)
   - [Search](./wiki/th/API_SEARCH.md)
   - [Suggest](./wiki/th/API_SUGGEST.md)
@@ -69,8 +70,8 @@ require('node_modules/thinknetmaps/dist/thinknetmaps.css')
 ### หรือดาวน์โหลดจาก THiNKNET Maps Server สำหรับใช้บน HTML
 
 ```html
-<script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.js'></script>
-<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.css' rel='stylesheet' />
+<script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.2.0-rc0.min.js'></script>
+<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.2.0-rc0.min.css' rel='stylesheet' />
 ```
 
 ## :electric_plug: เริ่มใช้งาน THiNKNET Maps API
@@ -85,8 +86,8 @@ require('node_modules/thinknetmaps/dist/thinknetmaps.css')
 ```html
 <html>
   <head>
-    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.js'></script>
-    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.css' rel='stylesheet' />
+    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.2.0-rc0.min.js'></script>
+    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.2.0-rc0.min.css' rel='stylesheet' />
   </head>
   <body>
     <div id="map" style="height: 100vh;" />
@@ -112,8 +113,10 @@ require('node_modules/thinknetmaps/dist/thinknetmaps.css')
 | api_key | API key ของคุณ | string | - |
 | center | จุดเริ่มต้นของแผนที่ | object | { lng: 100.49, lat: 13.72 } |
 | zoom | ระดับการซูมขณะเริ่มแผนที่ จะต้องอยู่ระหว่าง 1 - 22 | integer | 9 |
-| navigationCtrl | แสดงแถบปรับมุมมองของแผนที่ | boolean | false |
+| navigationCtrl | แสดงแถบปรับมุมมองของแผนที่ | boolean,object | false |
 | protectScroll | ป้องกันการเลื่อนโดนแผนที่ | boolean | false |
+
+**** หมายเหตุ navigationCtrl สามารถปรับแต่งเพิ่มเติมได้
 
 การเรียกใช้ฟังก์ชันแผนที่ ทุกฟังก์ชันจะต้องเรียกหลังจากที่แผนที่ load เสร็จแล้ว ด้วยการเรียกฟังก์ชันใน `map.on('load', function...)` ดังนี้
 
@@ -608,6 +611,81 @@ map.on('load', function() {
 
 ---
 
+<a name="navigation"></a>
+
+### Navigation
+
+- [show compass](#show-compass)
+- [show zoom](#show-zoom)
+- [position](#position)
+
+หากต้องการปรับแต่ง navigationCtrl สามารถใช้ในรูปแบบ ของ object ได้ดังนี้
+
+| Property | Description | Type | Default |
+|--|--|--|--|
+| showCompass | ค่าที่ใช้ควบคุมการแสดงเข็มทิศ | boolean | true |
+| showZoom | ค่าที่ใช้ควบคุมการแสดงการย่อขยาย | boolean | true |
+| position | ค่าที่กำหนดตำแหน่งของ navigation มี 4 ตำแหน่ง top-right ,top-left ,bottom-left ,bottom-right | string | 'top-right' |
+
+<a name="showcompass"></a>
+
+#### show compass
+
+ปิดการใช้งานของ compass
+
+![showcompass false](/static/image/navigation-showcompass-false.png)
+
+```javascript
+const map = new thinknetmaps.Map({
+  container: 'map', // div's id for render map
+  app_id: 'YOUR_APP_ID',
+  api_key: 'YOUR_API_KEY',
+  navigationCtrl: {
+    showCompass: false
+  }
+})
+```
+
+<a name="showzoom"></a>
+
+#### show zoom
+
+ปิดการใช้งานของ zoom
+
+![showzoom false](/static/image/navigation-showzoom-false.png)
+
+```javascript
+const map = new thinknetmaps.Map({
+  container: 'map', // div's id for render map
+  app_id: 'YOUR_APP_ID',
+  api_key: 'YOUR_API_KEY',
+  navigationCtrl: {
+    showZoom: false
+  }
+})
+```
+<a name="position"></a>
+
+#### position
+
+สร้างปรับแต่งตำแหน่งของ navigation
+
+โดยสามารถจัดตำแหน่งได้ 4 ค่า top-right ( default ) ,top-left ,bottom-left ,bottom-right
+
+![position top left](/static/image/navigation-position-top-left.png)
+
+```javascript
+const map = new thinknetmaps.Map({
+  container: 'map', // div's id for render map
+  app_id: 'YOUR_APP_ID',
+  api_key: 'YOUR_API_KEY',
+  navigationCtrl: {
+    position: 'top-left'
+  }
+})
+```
+---
+
 ## :bulb: Code ตัวอย่าง
 
 ```html
@@ -615,8 +693,8 @@ map.on('load', function() {
   <head>
     <title>DEMO</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.js'></script>
-<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.css' rel='stylesheet' />
+    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.2.0-rc0.min.js'></script>
+<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.2.0-rc0.min.css' rel='stylesheet' />
   </head>
   <body>
     <div id="map" style="height: 100vh;"></div>

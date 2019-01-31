@@ -73,7 +73,16 @@ class ThinknetMaps extends Map {
             this.disableScroll(this, container);
         }
         if (options.navigationCtrl) {
-            this.addControl(new NavigationControl());
+            const { showCompass = true, showZoom = true, position} = options.navigationCtrl;
+            const optionControl = {showCompass, showZoom};
+            let optionPosition;
+
+            if (position === 'top-left' || position === 'bottom-left' || position === 'bottom-right') {
+                optionPosition = position;
+            } else {
+                optionPosition = 'top-right';
+            }
+            this.addControl(new NavigationControl(optionControl), optionPosition);
         }
     }
 

@@ -16,7 +16,7 @@ for manage your API key and retrieve access to THiNKNET Maps on your application
 - [ ] Improves addLine function
 - [ ] Adjust shape of line and polygon
 
-## :pushpin: Release Notes 1.1.0
+## :pushpin: Release Notes 1.2.0-rc0
 
 - [x] Better Marker and Popup event listener manipulation
 - [x] Enable to get layer and source of Marker by put its id
@@ -41,6 +41,7 @@ for manage your API key and retrieve access to THiNKNET Maps on your application
 - [Scrolling protection](#protected-scrolling)
 - [Marker](#marker)
 - [Geometry](#geometry)
+- [Navigation](#navigation)
 - [API Document](#)
   - [Search](./wiki/en/API_SEARCH.md)
   - [Suggest](./wiki/en/API_SUGGEST.md)
@@ -68,8 +69,8 @@ require('node_modules/thinknetmaps/dist/thinknetmaps.css')
 ### Alternatively, download from THiNKNET server to embed on HTML
 
 ```html
-<script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.js'></script>
-<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.css' rel='stylesheet' />
+<script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.2.0-rc0.min.js'></script>
+<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.2.0-rc0.min.css' rel='stylesheet' />
 ```
 
 ## :electric_plug: Get started with THiNKNET Maps API
@@ -84,8 +85,8 @@ Create div to make render area for map, but you should have both of `app_id` and
 ```html
 <html>
   <head>
-    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.js'></script>
-    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.css' rel='stylesheet' />
+    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.2.0-rc0.min.js'></script>
+    <link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.2.0-rc0.min.css' rel='stylesheet' />
   </head>
   <body>
     <div id="map" style="height: 100vh;" />
@@ -607,6 +608,81 @@ map.on('load', function() {
 
 ---
 
+<a name="navigation"></a>
+
+### Navigation
+
+- [show compass](#show-compass)
+- [show zoom](#show-zoom)
+- [position](#position)
+
+navigationCtrl can be customized 
+
+| Property | Description | Type | Default |
+|--|--|--|--|
+| showCompass | show compass control or not | boolean | true |
+| showZoom | show zoom control or not | boolean | true |
+| position | position of navigation panel on map ( top-right ,top-left ,bottom-left ,bottom-right ) | string | 'top-right' |
+
+<a name="showcompass"></a>
+
+#### show compass
+
+hide compass control
+
+![showcompass false](/static/image/navigation-showcompass-false.png)
+
+```javascript
+const map = new thinknetmaps.Map({
+  container: 'map', 
+  app_id: 'YOUR_APP_ID',
+  api_key: 'YOUR_API_KEY',
+  navigationCtrl: {
+    showCompass: false
+  }
+})
+```
+
+<a name="showzoom"></a>
+
+#### show zoom
+
+hide zoom control
+
+![showzoom false](/static/image/navigation-showzoom-false.png)
+
+```javascript
+const map = new thinknetmaps.Map({
+  container: 'map', 
+  app_id: 'YOUR_APP_ID',
+  api_key: 'YOUR_API_KEY',
+  navigationCtrl: {
+    showZoom: false
+  }
+})
+```
+<a name="position"></a>
+
+#### position
+
+position of navigation control
+
+there are 4 positions -> top-right ( default ) ,top-left ,bottom-left ,bottom-right
+
+![position top left](/static/image/navigation-position-top-left.png)
+
+```javascript
+const map = new thinknetmaps.Map({
+  container: 'map', 
+  app_id: 'YOUR_APP_ID',
+  api_key: 'YOUR_API_KEY',
+  navigationCtrl: {
+    position: 'top-left'
+  }
+})
+```
+---
+
 ## :bulb: Code Example
 
 ```html
@@ -614,8 +690,8 @@ map.on('load', function() {
   <head>
     <title>DEMO</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.js'></script>
-<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.1.0.min.css' rel='stylesheet' />
+    <script src='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.2.0-rc0.min.js'></script>
+<link href='https://api-maps.thinknet.co.th/libs/thinknetmaps.1.2.0-rc0.min.css' rel='stylesheet' />
   </head>
   <body>
     <div id="map" style="height: 100vh;"></div>
