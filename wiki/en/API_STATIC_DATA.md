@@ -15,7 +15,7 @@ Service for Region, Province, District, Sub-district datas in Thailand
 * [Educations](#educations)
     * [Get All Education Places](#get-all-education-places)
     * [Get Education Place By `education_code`](#get-education-place-by-education_code)
-* [Advance Optional Search](#advance-optional-search)
+* [Advanced Options](#advanced-options)
     * [Example](#example)
 
 ## Regions
