@@ -33,7 +33,7 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 * [Bus Stops](#bus-stops)
     * [Get All Bus Stops](#get-all-bus-stops)
     * [Get Bus Stops by `bus_stop_id`](#get-bus-stops-by-bus_stop_id)
-* [Advance Optional Search](#advance-optional-search)
+* [Advanced Options](#advanced-options)
     * [Example](#example)
 
 ## Countries
