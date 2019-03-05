@@ -44,7 +44,7 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 #### Response Array Object
 | Property | Description | Type |
 |----------|-------------|------|
-| id | id ของประเทศ | Number |
+| id | id ของประเทศ | String |
 | name | ชื่อประเทศ | String |
 | alpha2_cntry_code | รหัสย่อของประเทศ 2 หลัก ตามมาตรฐาน ISO3166-1 Alpha-2 | String |
 | alpha3_cntry_code | รหัสย่อของประเทศ 3 หลัก ตามมาตรฐาน ISO3166-1 Alpha-3 | String |
@@ -83,7 +83,7 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 #### Response Object
 | Property | Description | Type |
 |----------|-------------|------|
-| id | id ของประเทศ | Number |
+| id | id ของประเทศ | String |
 | name | ชื่อประเทศ | String |
 | alpha2_cntry_code | รหัสย่อของประเทศ 2 หลัก ตามมาตรฐาน ISO3166-1 Alpha-2 | String |
 | alpha3_cntry_code | รหัสย่อของประเทศ 3 หลัก ตามมาตรฐาน ISO3166-1 Alpha-3 | String |
@@ -143,8 +143,8 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
           "th": "เหนือ",
           "en": "North"
         },
-        "type_id": 1,
-        "id": 1,
+        "type_id": "1",
+        "id": "1",
         "type": "Official"
     },
     ...
@@ -166,8 +166,8 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
           "th": "เหนือ",
           "en": "North"
         },
-        "type_id": 1,
-        "id": 1,
+        "type_id": "1",
+        "id": "1",
         "type": "Official"
     },
     ...
@@ -189,8 +189,8 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
           "th": "เหนือ",
           "en": "North"
         },
-        "type_id": 2,
-        "id": 1,
+        "type_id": "2",
+        "id": "1",
         "type": "Tourism Authority of Thailand"
     },
     ...
@@ -212,8 +212,8 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
           "th": "เหนือ",
           "en": "North"
         },
-        "type_id": 3,
-        "id": 1,
+        "type_id": "3",
+        "id": "1",
         "type": "JobThai"
     },
     ...
@@ -241,9 +241,9 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 | &nbsp;&nbsp;&nbsp;&nbsp;en | ชื่อจังหวัดภาษาอังกฤษ | String |
 | code | รหัสของจังหวัด | String |
 | region_code | รหัสของภูมิภาค | Object |
-| &nbsp;&nbsp;&nbsp;&nbsp;official | รหัสของภูมิภาคแบบ `Official` | Number |
-| &nbsp;&nbsp;&nbsp;&nbsp;tourism | รหัสของภูมิภาคแบบ `Tourism Authority of Thailand` | Number | &nbsp;&nbsp;&nbsp;&nbsp;tourism | รหัสของภูมิภาคแบบ `Tourism Authority of Thailand` | Number |
-| &nbsp;&nbsp;&nbsp;&nbsp;jobthai | รหัสของภูมิภาคแบบ `Jobthai` | Number |
+| &nbsp;&nbsp;&nbsp;&nbsp;official | รหัสของภูมิภาคแบบ `Official` | String |
+| &nbsp;&nbsp;&nbsp;&nbsp;tourism | รหัสของภูมิภาคแบบ `Tourism Authority of Thailand` | String | &nbsp;&nbsp;&nbsp;&nbsp;tourism | รหัสของภูมิภาคแบบ `Tourism Authority of Thailand` | String |
+| &nbsp;&nbsp;&nbsp;&nbsp;jobthai | รหัสของภูมิภาคแบบ `Jobthai` | String |
 
 #### Example Response
 
@@ -257,9 +257,9 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
             "en": "Bangkok"
         },
         "region_code": {
-            "official": 4,
-            "tourism": 3,
-            "jobthai": 6
+            "official": "4",
+            "tourism": "3",
+            "jobthai": "6"
         },
         "code": "01"
     },
@@ -278,9 +278,9 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
             "en": "Bangkok"
         },
         "region_code": {
-            "official": 4,
-            "tourism": 3,
-            "jobthai": 6
+            "official": "4",
+            "tourism": "3",
+            "jobthai": "6"
         },
         "code": "01"
     },
@@ -290,9 +290,9 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
             "en": "Chai Nat"
         },
         "region_code": {
-            "official": 4,
-            "tourism": 3,
-            "jobthai": 3
+            "official": "4",
+            "tourism": "3",
+            "jobthai": "3"
         },
         "code": "10"
     },
@@ -311,9 +311,9 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
             "en": "Chanthaburi"
         },
         "region_code": {
-            "official": 5,
-            "tourism": 4,
-            "jobthai": 4
+            "official": "5",
+            "tourism": "4",
+            "jobthai": "4"
         },
         "code": "07"
     },
@@ -332,9 +332,9 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
             "en": "Chanthaburi"
         },
         "region_code": {
-            "official": 5,
-            "tourism": 4,
-            "jobthai": 4
+            "official": "5",
+            "tourism": "4",
+            "jobthai": "4"
         },
         "code": "07"
     },
@@ -359,9 +359,9 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 | &nbsp;&nbsp;&nbsp;&nbsp;en | ชื่อจังหวัดภาษาอังกฤษ | String |
 | code | รหัสของจังหวัด | String |
 | region_code | รหัสของภูมิภาค | Object |
-| &nbsp;&nbsp;&nbsp;&nbsp;official | รหัสของภูมิภาคแบบ `Official` | Number |
-| &nbsp;&nbsp;&nbsp;&nbsp;tourism | รหัสของภูมิภาคแบบ `Tourism Authority of Thailand` | Number |
-| &nbsp;&nbsp;&nbsp;&nbsp;jobthai | รหัสของภูมิภาคแบบ `Jobthai` | Number |
+| &nbsp;&nbsp;&nbsp;&nbsp;official | รหัสของภูมิภาคแบบ `Official` | String |
+| &nbsp;&nbsp;&nbsp;&nbsp;tourism | รหัสของภูมิภาคแบบ `Tourism Authority of Thailand` | String |
+| &nbsp;&nbsp;&nbsp;&nbsp;jobthai | รหัสของภูมิภาคแบบ `Jobthai` | String |
 
 #### Example Response
 > **GET** `https://api-maps.thinknet.co.th/v1/static/provinces/01?app_id=YOUR_APP_ID&api_key=YOUR_API_KEY`
@@ -373,9 +373,9 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
         "en": "Bangkok"
     },
     "region_code": {
-        "official": 4,
-        "tourism": 3,
-        "jobthai": 6
+        "official": "4",
+        "tourism": "3",
+        "jobthai": "6"
     },
     "code": "01"
 }
@@ -674,7 +674,7 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 #### Response Array Object
 | Property | Description | Type |
 |----------|-------------|------|
-| id | รหัสของ นิคมอุตสาหกรรม | Number |
+| id | รหัสของ นิคมอุตสาหกรรม | String |
 | name | ชื่อ นิคมอุตสาหกรรม | Object |
 | &nbsp;&nbsp;&nbsp;&nbsp;th | ชื่อภาษาไทย | String |
 | &nbsp;&nbsp;&nbsp;&nbsp;en | ชื่อภาษาอังกฤษ | String |
@@ -729,12 +729,12 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 #### Params
 | Property | Description | Type | Allowed Values | Default Value |
 |----------|-------------|------|----------------|---------------|
-| id | รหัสของนิคมอุตสาหกรรม | Number | - | - |
+| id | รหัสของนิคมอุตสาหกรรม | String | - | - |
 
 #### Response Object
 | Property | Description | Type |
 |----------|-------------|------|
-| id | รหัสของ นิคมอุตสาหกรรม | Number |
+| id | รหัสของ นิคมอุตสาหกรรม | String |
 | name | ชื่อ นิคมอุตสาหกรรม | Object |
 | &nbsp;&nbsp;&nbsp;&nbsp;th | ชื่อภาษาไทย | String |
 | &nbsp;&nbsp;&nbsp;&nbsp;en | ชื่อภาษาอังกฤษ | String |
@@ -891,7 +891,7 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 | Property | Description | Type | Allowed Values | Default Value |
 |----------|-------------|------|----------------|---------------|
 | type | ประเภทของสถานี | String | BTS,MRT,ARL,BRT | -|
-| transit_route_id | รหัสของสายรถไฟฟ้า | Number | 1-6 | -|
+| transit_route_id | รหัสของสายรถไฟฟ้า | String | 1-6 | -|
 
 #### Response Array Object
 | Property | Description | Type |
@@ -1014,8 +1014,8 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 | bus_direction | ทิศทางของรถเมล์ | Object |
 | &nbsp;&nbsp;&nbsp;&nbsp;th | ชื่อทิศทางภาษาไทย | String |
 | &nbsp;&nbsp;&nbsp;&nbsp;en | ชื่อทิศทางภาษาอังกฤษ | String |
-| id | รหัสของ สายรถเมล์ | Number |
-| bus_line_id | หมายเลขของสายรถเมล์ | String |
+| id | รหัสของ สายรถเมล์ | String |
+| bus_line | หมายเลขของสายรถเมล์ | String |
 #### Example Response
 > **GET** `https://api-maps.thinknet.co.th/v1/static/bus-lines?app_id=YOUR_APP_ID&api_key=YOUR_API_KEY`
 
@@ -1038,8 +1038,8 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
             th: "เข้าเมือง",
             en: "inbound"
         },
-        id: 1,
-        bus_line_id: "1"
+        id: "1",
+        bus_line: "1"
     },
     ...
 ]
@@ -1052,7 +1052,7 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 #### Params
 | Property | Description | Type |
 |----------|-------------|------|
-| id | รหัสของสายรถเมล์ | Number |
+| id | รหัสของสายรถเมล์ | String |
 
 #### Response Object
 | Property | Description | Type |
@@ -1069,8 +1069,8 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 | bus_direction | ทิศทางของรถเมล์ | Object |
 | &nbsp;&nbsp;&nbsp;&nbsp;th | ชื่อทิศทางภาษาไทย | String |
 | &nbsp;&nbsp;&nbsp;&nbsp;en | ชื่อทิศทางภาษาอังกฤษ | String |
-| id | รหัสของ สายรถเมล์ | Number |
-| bus_line_id | หมายเลขของสายรถเมล์ | String |
+| id | รหัสของ สายรถเมล์ | String |
+| bus_line | หมายเลขของสายรถเมล์ | String |
 
 #### Example Response
 > **GET** `https://api-maps.thinknet.co.th/v1/static/bus-lines/1?app_id=YOUR_APP_ID&api_key=YOUR_API_KEY`
@@ -1093,8 +1093,8 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
         th: "เข้าเมือง",
         en: "inbound"
     },
-    id: 1,
-    bus_line_id: "1"
+    id: "1",
+    bus_line: "1"
 }
 ```
 
@@ -1108,7 +1108,7 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 #### Query Strings
 | Property | Description | Type | Allowed Values | Default Value |
 |----------|-------------|------|----------------|---------------|
-| bus_line_id | รหัสของสายรถเมล์ | String | - | - |
+| bus_line | รหัสของสายรถเมล์ | String | - | - |
 
 #### Response Array Object
 | Property | Description | Type |
@@ -1116,8 +1116,8 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 | name | ชื่อป้ายรถเมล์ | Object |
 | &nbsp;&nbsp;&nbsp;&nbsp;th | ชื่อภาษาไทย | String |
 | &nbsp;&nbsp;&nbsp;&nbsp;en | ชื่อภาษาอังกฤษ | String 
-| id | รหัสของ ป้ายรถเมล์ | Number |
-| bus_line_id | รหัสของสายรถเมล์ | Number |
+| id | รหัสของ ป้ายรถเมล์ | String |
+| bus_line | รหัสของสายรถเมล์ | String |
 | sort_no | ลำดับของป้ายรถเมล์ในสายรถเมล์ | Number |
 
 #### Example Response
@@ -1130,8 +1130,8 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
             th: "ตรงข้ามโรงพยาบาลเจริญกรุง(ตรงข้ามซอยเจริญกรุง 86)",
             en: "Opposite ropchut charoen krung"
         },
-        id: 1,
-        bus_line_id: 1,
+        id: "1",
+        bus_line_id: "1",
         sort_no: 1
     },
     ...
@@ -1145,7 +1145,7 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 #### Params
 | Property | Description | Type | Allowed Values | Default Value |
 |----------|-------------|------|----------------|---------------|
-| id | รหัสของป้ายรถเมล์ | Number | - | - |
+| id | รหัสของป้ายรถเมล์ | String | - | - |
 
 #### Response Object
 | Property | Description | Type |
@@ -1153,8 +1153,8 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 | name | ชื่อป้ายรถเมล์ | Object |
 | &nbsp;&nbsp;&nbsp;&nbsp;th | ชื่อภาษาไทย | String |
 | &nbsp;&nbsp;&nbsp;&nbsp;en | ชื่อภาษาอังกฤษ | String |
-| id | รหัสของ ป้ายรถเมล์ | Number |
-| bus_line_id | รหัสของสายรถเมล์ | Number |
+| id | รหัสของ ป้ายรถเมล์ | String |
+| bus_line | รหัสของสายรถเมล์ | String |
 | sort_no | ลำดับของป้ายรถเมล์ในสายรถเมล์ | Number |
 
 #### Example Response
@@ -1166,8 +1166,8 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
         th: "ตรงข้ามโรงพยาบาลเจริญกรุง(ตรงข้ามซอยเจริญกรุง 86)",
         en: "Opposite ropchut charoen krung"
     },
-    id: 1,
-    bus_line_id: 1,
+    id: "1",
+    bus_line_id: "1",
     sort_no: 1
 }
 ```
@@ -1229,7 +1229,7 @@ Service สำหรับดึงข้อมูล ภูมิภาค, จ
 
 ```
 {
-    id: 1,
+    id: "1",
     label: {
         th: "1",
         en: "1"
